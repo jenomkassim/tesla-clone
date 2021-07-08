@@ -1,22 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Section() {
+function Section(props) {
     return (
-        <Container>
+        <Container backgroundImage = {props.bgImage}>
             <HeroText>
-                <h1>Model S</h1>
-                <p>Order Online for Touchless Delivery</p>
+                <h1>{props.title}</h1>
+                <p>{props.description}</p>
             </HeroText>
 
             <BottomSection>
                 <ButtonGroup>
                     <LeftButton>
-                        Custom Order
+                        {props.leftBtn}
                     </LeftButton>
 
                     <RightButton>
-                        Existing Inventory
+                        {props.rightBtn}
                     </RightButton>
                 </ButtonGroup>
 
@@ -40,6 +40,7 @@ text-align: center;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+background-image: ${props => `url("./images/${props.backgroundImage}")`};
 `
 
 const HeroText = styled.div `
@@ -64,9 +65,13 @@ text-transform: uppercase;
 color: #ffffff;
 font-size: 12px;
 cursor: pointer;
+opacity: 0.85
 `
 
 const RightButton = styled(LeftButton)`
+background-color: #ffffff;
+opacity: 0.65;
+color: #000000;
 `
 
 const BottomSection = styled.div``
