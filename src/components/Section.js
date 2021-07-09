@@ -1,24 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 
 function Section(props) {
     return (
         <Container backgroundImage = {props.bgImage}>
-            <HeroText>
-                <h1>{props.title}</h1>
-                <p>{props.description}</p>
-            </HeroText>
+            <Fade bottom>
+                <HeroText>
+                    <h1>{props.title}</h1>
+                    <p>{props.description}</p>
+                </HeroText>
+            </Fade>
 
             <BottomSection>
-                <ButtonGroup>
-                    <LeftButton>
-                        {props.leftBtn}
-                    </LeftButton>
+                <Fade bottom>
+                    <ButtonGroup>
+                        <LeftButton>
+                            {props.leftBtn}
+                        </LeftButton>
 
-                    <RightButton>
-                        {props.rightBtn}
-                    </RightButton>
-                </ButtonGroup>
+                        {props.rightBtn &&
+                        <RightButton>
+                            {props.rightBtn}
+                        </RightButton>
+                        }
+
+                    </ButtonGroup>
+                </Fade>
 
                 <DownArrow src="./images/down-arrow.svg"/>
             </BottomSection>
@@ -50,6 +58,10 @@ padding-top: 15vh;
 const ButtonGroup = styled.div`
 display: flex;
 justify-content: center;
+@media(max-width: 768px) {
+flex-direction: column;
+align-items: center;
+}
 `
 
 const LeftButton = styled.div`

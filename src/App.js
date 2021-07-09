@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import Section from './components/Section'
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
+        <Header/>
       <Section
           title = "Model S"
           description = "Order Online for Touchless Delivery"
@@ -43,6 +45,21 @@ function App() {
             leftBtn = "Order Now"
             rightBtn = "Learn More"
             bgImage = "solar-panel.jpg"
+        />
+
+        <Section
+            title = "Solar Roof"
+            description = "Produce Clean Energy From Your Roof"
+            leftBtn = "Order Now"
+            rightBtn = "Learn More"
+            bgImage = "solar-roof.jpg"
+        />
+
+        <Section
+            title = "Accessories"
+            description = ""
+            leftBtn = "Shop Now"
+            bgImage = "accessories.jpg"
         />
     </div>
   );
