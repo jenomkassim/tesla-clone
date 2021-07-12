@@ -53,6 +53,9 @@ background-image: ${props => `url("./images/${props.backgroundImage}")`};
 
 const HeroText = styled.div `
 padding-top: 15vh;
+p {
+margin-top: 5px;
+}
 `
 
 const ButtonGroup = styled.div`
